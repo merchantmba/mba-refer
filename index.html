@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You Were Referred — Merchant MBA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #0B1220;
+    --charcoal: #1E293B;
+    --sand: #F1EDE6;
+    --warm-white: #F8FAFC;
+    --white: #FFFFFF;
+    --mid-gray: #CBD5E1;
+    --text: #334155;
+    --text-light: #64748B;
+    --solar-gold: #D4A853;
+    --solar-gold-subtle: #F5ECD7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--night);
+    color: var(--warm-white);
+    text-align: center;
+    padding: 56px 24px 48px;
+  }
+  .hero-logo {
+    display: block;
+    max-width: 180px;
+    margin: 0 auto 28px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 4.5vw, 42px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero p {
+    font-size: clamp(16px, 2.2vw, 18px);
+    line-height: 1.6;
+    max-width: 540px;
+    margin: 0 auto;
+    color: #94A3B8;
+  }
+
+  /* SOCIAL PROOF BAR */
+  .proof-bar {
+    background: var(--solar-gold-subtle);
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .proof-bar .stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .proof-bar .stat {
+    text-align: center;
+  }
+  .proof-bar .stat-num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--night);
+    line-height: 1.2;
+  }
+  .proof-bar .stat-label {
+    font-size: 13px;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  /* WHAT WE DO */
+  .what-we-do {
+    background: var(--warm-white);
+    padding: 48px 24px;
+  }
+  .what-we-do .container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .what-we-do h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--night);
+    margin-bottom: 16px;
+  }
+  .what-we-do p {
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .what-we-do .highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+    text-align: left;
+  }
+  @media (max-width: 500px) {
+    .what-we-do .highlights { grid-template-columns: 1fr; }
+  }
+  .highlight {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid var(--mid-gray);
+  }
+  .highlight h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--night);
+    margin-bottom: 4px;
+  }
+  .highlight p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 0;
+  }
+
+  /* FORM */
+  .form-section {
+    background: var(--night);
+    padding: 56px 24px;
+    color: var(--warm-white);
+  }
+  .form-section h2 {
+    color: var(--warm-white);
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .form-section .subtitle {
+    text-align: center;
+    color: #94A3B8;
+    font-size: 16px;
+    max-width: 460px;
+    margin: 0 auto 32px;
+  }
+  form {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .form-group {
+    margin-bottom: 18px;
+  }
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--mid-gray);
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background: var(--charcoal);
+    color: var(--warm-white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--solar-gold);
+  }
+  input::placeholder, textarea::placeholder {
+    color: var(--text-light);
+  }
+  select option {
+    background: var(--charcoal);
+  }
+  textarea {
+    resize: vertical;
+    min-height: 70px;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 16px 32px;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: inherit;
+    color: var(--night);
+    background: var(--solar-gold);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-top: 24px;
+  }
+  .btn:hover {
+    opacity: 0.9;
+  }
+
+  .success-message {
+    display: none;
+    text-align: center;
+    padding: 40px 24px;
+  }
+  .success-message h3 {
+    color: var(--solar-gold);
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .success-message p {
+    color: #94A3B8;
+    font-size: 16px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    text-align: center;
+    padding: 28px 24px;
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  footer a {
+    color: var(--solar-gold);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="merchant-logo-white.png" alt="Merchant MBA" class="hero-logo">
+  <h1>Someone who bet on themselves thinks you should too.</h1>
+  <p>You were referred by a Merchant MBA alumni — someone who went through the MBA admissions process with our support and thought we could help you too.</p>
+</div>
+
+<!-- SOCIAL PROOF -->
+<div class="proof-bar">
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">450+</div>
+      <div class="stat-label">Students Guided</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$7M+</div>
+      <div class="stat-label">In Scholarships</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Years of Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">95%</div>
+      <div class="stat-label">Acceptance Rate</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE DO -->
+<div class="what-we-do">
+  <div class="container">
+    <h2>What We Do</h2>
+    <p>Merchant MBA works with you from career clarity all the way through admission and scholarships. We don't just help you apply — we help you figure out the life you actually want, then build the strategy to get there.</p>
+    <div class="highlights">
+      <div class="highlight">
+        <h3>Career Strategy</h3>
+        <p>Define your 10-year vision and build your MBA story around it</p>
+      </div>
+      <div class="highlight">
+        <h3>School Selection</h3>
+        <p>Find the right schools for your profile, goals, and budget</p>
+      </div>
+      <div class="highlight">
+        <h3>Applications</h3>
+        <p>CV, essays, recommendations — positioned to stand out</p>
+      </div>
+      <div class="highlight">
+        <h3>Scholarships</h3>
+        <p>Negotiation strategy that's earned our students $7M+</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="form-section">
+  <div class="container">
+    <h2>Get a Free Strategy Review</h2>
+    <p class="subtitle">Fill this out and we'll reach out within 24 hours. Or if you're ready now, just book a call directly.</p>
+    <p style="text-align:center; margin-bottom:32px;"><a href="https://meetings.hubspot.com/anish-merchant/meeting-with-anish" style="color:var(--solar-gold); font-weight:600; font-size:17px; text-decoration:underline;">Skip the form — book a call now</a></p>
+
+    <form id="referralForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">WhatsApp or Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+1 555 123 4567">
+      </div>
+
+      <div class="form-group">
+        <label for="stage">Where are you in the MBA process?</label>
+        <select id="stage" name="stage" required>
+          <option value="">Select one</option>
+          <option value="exploring">Just exploring — not sure if an MBA is right for me</option>
+          <option value="early">Early stage — thinking about schools and timing</option>
+          <option value="preparing">Preparing — working on GMAT/GRE or building my profile</option>
+          <option value="applying">Ready to apply — need help with applications</option>
+          <option value="admitted">Already admitted — need help with scholarships or decision</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="target">Target schools or programs (if you have any in mind)</label>
+        <input type="text" id="target" name="target" placeholder="e.g., Kellogg, INSEAD, HBS, not sure yet...">
+      </div>
+
+      <div class="form-group">
+        <label for="referrer">Who referred you?</label>
+        <input type="text" id="referrer" name="referrer" placeholder="Name of the person who sent you here" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Anything else you'd like us to know?</label>
+        <textarea id="message" name="message" placeholder="Your background, goals, questions — anything helps"></textarea>
+      </div>
+
+      <button type="submit" class="btn">Get My Free Strategy Review</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      <h3>We got your info!</h3>
+      <p>We'll reach out within 24 hours to schedule your free strategy review. Talk soon.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Merchant MBA &mdash; <a href="https://merchantmba.com">merchantmba.com</a></p>
+</footer>
+
+<script>
+  document.getElementById('referralForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const data = {};
+    formData.forEach((value, key) => { data[key] = value; });
+
+    const subject = encodeURIComponent('Referral Lead: ' + data.name + ' (referred by ' + data.referrer + ')');
+    const body = encodeURIComponent(
+      'REFERRAL LEAD\n\n' +
+      'Name: ' + data.name + '\n' +
+      'Email: ' + data.email + '\n' +
+      'Phone/WhatsApp: ' + (data.phone || 'N/A') + '\n' +
+      'Stage: ' + data.stage + '\n' +
+      'Target Schools: ' + (data.target || 'N/A') + '\n' +
+      'Referred By: ' + data.referrer + '\n' +
+      'Message: ' + (data.message || 'N/A')
+    );
+
+    window.location.href = 'mailto:anishmerchant@merchantmba.com?subject=' + subject + '&body=' + body;
+
+    this.style.display = 'none';
+    document.getElementById('successMessage').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
