@@ -368,6 +368,13 @@
 </footer>
 
 <script>
+  // Auto-fill referrer from URL param ?ref=Name
+  const urlParams = new URLSearchParams(window.location.search);
+  const refParam = urlParams.get('ref');
+  if (refParam) {
+    document.getElementById('referrer').value = refParam.replace(/\+/g, ' ');
+  }
+
   document.getElementById('referralForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
