@@ -247,6 +247,12 @@
 </head>
 <body>
 
+<!-- REFERRED BY BANNER (shown only when ?ref= present) -->
+<div id="referredByBanner" style="display:none; background:var(--solar-gold); color:var(--night); text-align:center; padding:14px 24px; font-size:15px; font-weight:600; letter-spacing:0.02em;">
+  <span style="opacity:0.85; font-weight:500;">You were personally referred by</span>
+  <span id="referredByName" style="font-weight:700;"></span>
+</div>
+
 <!-- HERO -->
 <div class="hero">
   <img src="merchant-logo-white.png" alt="Merchant MBA" class="hero-logo">
@@ -368,11 +374,14 @@
 </footer>
 
 <script>
-  // Auto-fill referrer from URL param ?ref=Name
+  // Auto-fill referrer from URL param ?ref=Name and show banner
   const urlParams = new URLSearchParams(window.location.search);
   const refParam = urlParams.get('ref');
   if (refParam) {
-    document.getElementById('referrer').value = refParam.replace(/\+/g, ' ');
+    const refName = refParam.replace(/\+/g, ' ');
+    document.getElementById('referrer').value = refName;
+    document.getElementById('referredByName').textContent = ' ' + refName;
+    document.getElementById('referredByBanner').style.display = 'block';
   }
 
   document.getElementById('referralForm').addEventListener('submit', function(e) {
